@@ -5,9 +5,9 @@ public class AxisSortOrder : MonoBehaviour {
 	
 	Renderer myRenderer;
 
-	public bool useAxisX = false;
-	public bool useAxisY = true;
-	public bool useAxisZ = false;
+	public enum Axis { X, Y, Z	}
+
+	public Axis axis = Axis.Y;
 
 	public float offset;
 	public bool visibleOffset = true;
@@ -32,8 +32,8 @@ public class AxisSortOrder : MonoBehaviour {
 	/// </summary>
 	/// <param name="renderer">Renderer.</param>
 	void FixLayerDepth(Renderer renderer) {
-		float axisPosition = useAxisX ? transform.position.x : useAxisY ? transform.position.y : useAxisZ ? transform.position.z : 0f;
-		float axisScale = useAxisX ? transform.lossyScale.x : useAxisY ? transform.lossyScale.y : useAxisZ ? transform.lossyScale.z : 1f;
+		float axisPosition = axis == Axis.X ? transform.position.x : axis == Axis.Y ? transform.position.y : axis == Axis.Z ? transform.position.z : 0f;
+		float axisScale = axis == Axis.X ? transform.lossyScale.x : axis == Axis.Y ? transform.lossyScale.y : axis == Axis.Z ? transform.lossyScale.z : 1f;
 
 		renderer.sortingOrder = Mathf.RoundToInt ((axisPosition + offset) * axisScale * 100) * (reverseDirection ? 1 : -1);
 	}
@@ -50,7 +50,7 @@ public class AxisSortOrder : MonoBehaviour {
 	/// </summary>
 	void OnDrawGizmosSelected() {
 		if (visibleOffset) {
-			Gizmos.DrawIcon (new Vector3 (transform.position.x + (useAxisX ? offset * transform.lossyScale.x : 0f), transform.position.y + (useAxisY ? offset * transform.lossyScale.y : 0f), transform.position.z + (useAxisZ ? offset * transform.lossyScale.z : 0f)), "AxisSortOrder_Offset", true);
+			Gizmos.DrawIcon (new Vector3 (transform.position.x + (axis == Axis.X ? offset * transform.lossyScale.x : 0f), transform.position.y + (axis == Axis.Y ? offset * transform.lossyScale.y : 0f), transform.position.z + (axis == Axis.Z ? offset * transform.lossyScale.z : 0f)), "AxisSortOrder_Offset", true);
 		}
 	}
 }

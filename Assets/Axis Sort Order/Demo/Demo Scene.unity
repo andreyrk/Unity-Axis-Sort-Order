@@ -509,9 +509,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5be51a8cb9357f645b1bf28316b0b4a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  useAxisX: 0
-  useAxisY: 1
-  useAxisZ: 0
+  axis: 1
   offset: -0.08
   visibleOffset: 1
   reverseDirection: 0
