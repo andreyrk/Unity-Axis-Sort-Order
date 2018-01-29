@@ -19,7 +19,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4409712235695838}
-  - component: {fileID: 114033035092221514}
+  - component: {fileID: 114877737937312120}
   - component: {fileID: 212782640798826666}
   - component: {fileID: 58876049806463828}
   m_Layer: 0
@@ -57,7 +57,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: -0.2}
   serializedVersion: 2
   m_Radius: 0.06
---- !u!114 &114033035092221514
+--- !u!114 &114877737937312120
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -65,14 +65,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1800880764323994}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5be51a8cb9357f645b1bf28316b0b4a0, type: 3}
+  m_Script: {fileID: 11500000, guid: 42f1165c22f219445a2ef3cdaef4d309, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  useAxisX: 0
-  useAxisY: 1
-  useAxisZ: 0
-  offset: 0
+  axis: 1
+  offset: -0.14
   visibleOffset: 1
+  reverseDirection: 0
 --- !u!212 &212782640798826666
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -107,7 +106,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: ba59136de764def47b354c916c718790, type: 3}
+  m_Sprite: {fileID: 21300000, guid: db02c066f12fb0a428a58ad24cbc10cb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
